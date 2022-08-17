@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo list App</title>
+    <link rel="shortcut icon" href="images/to-do-list.png" type="image/png">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+    <main>
+        <header>
+            <p class="app-name">todo list on js</p>
+        </header>
+
+        <div class="time-date">
+            <p id="time">17:15</p>
+            <p id="date">Tuesday, Aug, 16</p>
+        </div>
+
+        <div class="content">
+            <div class="task-list">
+                <p id="start-message">Нет новых задач</p>
+            </div>
+
+            <div class="input-panel">
+                <input placeholder="name task" type="text" id="task-name-input">
+                <input value="add task" type="button" id="add-task-btn">
+            </div>
+        </div>
+
+        <div class="sort-panel">
+            <button hidden id="show-all-task">Показать все</button>
+            <button hidden id="hide-completed-task">Показать не завершенные задачи</button>
+        </div>
+
+    </main>
+
+</body>
+
+<script src="scripts/main.js"></script>
+<script src="scripts/set-time.js"></script>
+<script src="scripts/sort-tasks.js"></script>
+<script src="scripts/add-task.js"></script>
+
+</html>
