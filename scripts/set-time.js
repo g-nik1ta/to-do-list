@@ -1,25 +1,29 @@
-function setTime() {
-    let today = new Date();
-    let h = today.getHours();
-    let m = today.getMinutes();
-    let s = today.getSeconds();
+class SetTime {
+    constructor(value) {
+        this.options = value;
+    }
 
-    h = checkTime(h);
-    m = checkTime(m);
-    s = checkTime(s);
+    currentTimeDate() {
+        this.today = new Date();
 
-    let nowTime = document.querySelector("#time");
-    nowTime.innerHTML = `${h}:${m}`;
+        this.h = this.today.getHours();
+        this.m = this.today.getMinutes();
+        this.s = this.today.getSeconds();
 
-    function checkTime(i) {
+        this.h = this.checkTime(this.h);
+        this.m = this.checkTime(this.m);
+        this.s = this.checkTime(this.s);
+    }
+
+    checkTime(i) {
         if (i < 10) i = "0" + i;
         return i;
     }
-}
-function setDate() {
-    let today = new Date();
-    let nowDate = document.querySelector("#date");
-    nowDate.innerHTML = today.toLocaleDateString("en-US", options);
+
+    writeIn() {
+        document.querySelector("#date").innerHTML = this.today.toLocaleDateString("en-US", this.options);
+        document.querySelector("#time").innerHTML = `${this.h}:${this.m}`;
+    }
 }
 
 let options = {
@@ -28,5 +32,8 @@ let options = {
     day: "numeric"
 }
 
-let t = setInterval(setTime, 500);
-let d = setInterval(setDate, 500);
+let time = new SetTime(options);
+setInterval(() => {
+    time.currentTimeDate();
+    time.writeIn();
+}, 1000);
