@@ -1,0 +1,45 @@
+@media (max-width: 480px) {
+    main .sort-panel {
+        flex-wrap: wrap;
+        align-items: center;
+        flex-direction: column-reverse;
+    }
+
+    main .sort-panel button {
+        font-size: 20px;
+    }
+
+    main .content .task-list .task {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    main .content .task-list .task .edit,
+    main .content .task-list .task .trash-can {
+        width: 20px;
+    }
+
+    main .content .task-list .task p {
+        text-align: left;
+    }
+
+    main .content .task-list .task .checkbox {
+        min-width: 8px;
+        min-height: 8px;
+        width: 8px;
+        height: 8px;
+    }
+
+    main .content .input-panel input[type="text"] {
+        width: 76%;
+    }
+
+    main .content .input-panel input[type="text"]::placeholder {
+        font-size: 16px
+    }
+
+    main .content .input-panel input[type="button"] {
+        width: 24%;
+        font-size: 12px;
+    }
+}
