@@ -16,6 +16,7 @@ class Task {
         this.text = text;
         this.isDone = false;
         this.div = null;
+        // this.startMsg = startMessage;
         this.editorSwitch = false;
     }
 
@@ -57,10 +58,11 @@ class Task {
     }
 
     removeList(element) {
+        let taskId = this.taskID;
+        let index = tasks.findIndex(el => el.taskID === taskId);
         element.remove();
-        let index = this;
         tasks.splice(index, 1);
-        if (tasks.length == 0) {
+        if (tasks.length === 0) {
             startMessage.hidden = false;
             showAllTask.hidden = true;
             hideCompletedTask.hidden = true;
