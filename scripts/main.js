@@ -3,6 +3,8 @@ let addTaskButton = document.querySelector("#add-task-btn");
 let startMessage = document.querySelector("#start-message");
 let taskList = document.querySelector(".task-list");
 let tasks = [];
+let content = document.querySelector(".content");
+let sortPanel = document.querySelector(".sort-panel");
 let showAllTask = document.querySelector("#show-all-task");
 let hideCompletedTask = document.querySelector("#hide-completed-task");
 
@@ -58,7 +60,12 @@ class Task {
         element.remove();
         let index = this;
         tasks.splice(index, 1);
-        if (tasks.length == 0) startMessage.hidden = false;
+        if (tasks.length == 0) {
+            startMessage.hidden = false;
+            showAllTask.hidden = true;
+            hideCompletedTask.hidden = true;
+        }
+        sortPanelBottomFn();
     }
 
     editor(element) {
@@ -86,5 +93,6 @@ class Task {
 
             element.querySelector(".edit-text").replaceWith(p);
         }
+        sortPanelBottomFn();
     }
 }

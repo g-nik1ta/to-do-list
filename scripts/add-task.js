@@ -9,6 +9,8 @@ function addTaskHandler() {
         let newTask = new Task(taskNameInput.value);
         newTask.createIn(taskList);
         tasks.push(newTask);
+        
+        sortPanelBottomFn();        
 
         taskNameInput.value = "";
     } else {
